@@ -1,5 +1,7 @@
 # VSCode-RAT
 
+![b65273c4-b332-4aeb-a05f-57fb64000f4e](https://github.com/user-attachments/assets/c21fb58e-4cd0-4af0-ae80-4cf6d422e38b)
+
 This malware leverages the legitimate tunneling functionality implemented in Visual Studio Code, specifically its integration with GitHub for secure remote access. By abusing this feature, it provides unprivileged attackers with seamless access to a compromised host via the Visual Studio Code IDE web interface.
 
 The malware operates on a straightforward yet effective concept:
