@@ -13,11 +13,15 @@ Then runs code.exe starting the actual tunnel and sends the machine authenticati
 These two information are all the TA needs to initiate the tunnel.
 
 Uses the OTP to log in to:
+
 &nbnps;
+
 https://github.com/login/device
 
 And then connects to te actual tunnel visiting:
+
 &nbnps;
+
 https://vscode.dev/tunnel/HOSTNAME/C:
 
 After that the TA can freely navigate the file system uploading and downloading files.
