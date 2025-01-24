@@ -4,9 +4,12 @@ This malware leverages the legitimate tunneling functionality implemented in Vis
 
 The malware operates on a straightforward yet effective concept:
 
-Initial Check: It first verifies whether Visual Studio Code is installed on the target machine.
-Automatic Installation: If Visual Studio Code is not already present, the malware silently downloads the latest version of code.exe directly from the official Microsoft website to ensure it remains inconspicuous.
-Tunnel Initialization: The malware executes code.exe to start the tunnel, which automatically generates a unique machine authentication OTP. Alongside the OTP, the machine's hostname is collected and transmitted to a remote server controlled by the threat actor (TA).
+- **Initial Check**: It first verifies whether Visual Studio Code is installed on the target machine.
+
+- **Automatic Installation**: If Visual Studio Code is not already present, the malware silently downloads the latest version of code.exe directly from the official Microsoft website to ensure it remains inconspicuous.
+
+- **Tunnel Initialization**: The malware executes code.exe to start the tunnel, which automatically generates a unique machine authentication OTP. Alongside the OTP, the machine's hostname is collected and transmitted to a remote server controlled by the threat actor (TA).
+  
 These two pieces of information – the OTP and hostname – are sufficient for the TA to hijack the tunneling session without requiring any direct access to the victim's machine.
 
 ## Establishing the Connection
