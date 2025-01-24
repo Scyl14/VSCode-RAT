@@ -36,3 +36,6 @@ That said, any post-exploitation activities (e.g., uploading or downloading larg
 
 TO DO:
 Add persistance.
+
+PS.
+why rust?... cause why not
