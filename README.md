@@ -21,7 +21,7 @@ This step links the tunnel to the TA's GitHub account, bypassing any need for fu
 
 Accesses the active tunnel by navigating to:
 
-https://vscode.dev/tunnel/HOSTNAME/C:
+https://vscode.dev/tunnel/HOSTNAME
 
 Once connected, the TA can browse the victim's file system, upload malicious payloads, and exfiltrate sensitive data. The use of legitimate GitHub and Visual Studio Code infrastructure ensures the malicious traffic blends seamlessly with normal activity, making detection significantly harder.
 
