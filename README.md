@@ -1,7 +1,4 @@
 # VSCode-RAT
-
-This work is a rust implementation a relatively known threat seen in the wild:
-
 This malware abuses the legitimate tunnel functionality implemented by Visual Studio Code. Granting user level access to a target host via the visual studio code IDE web interface.
 
 The concept on witch the malware is based i fairly simple, first check the presence of visual studio code no the system.
