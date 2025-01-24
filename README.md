@@ -1,6 +1,6 @@
 # VSCode-RAT
 
-This work is a rust implementation a relatively new threat seen in the wild:
+This work is a rust implementation a relatively known threat seen in the wild:
 
 This malware abuses the legitimate tunnel functionality implemented by Visual Studio Code. Granting user level access to a target host via the visual studio code IDE web interface.
 
@@ -22,7 +22,7 @@ https://vscode.dev/tunnel/HOSTNAME/C:
 
 After that the TA can freely navigate the file system uploading and downloading files.
 
-At the moment, since the malware use only legitimate traffic to VS code (just the first connetion to send the OTP and the hostname can be suspicious) is not detected by main EDR and AV tecnologies.
+At the moment, since the malware use only legitimate traffic to VS code (just the first connetion to send the OTP and the hostname can be suspicious) is not detected by main EDR and AV tecnologies. (Obvusly post exploitation is still fully detectable)
 
 TO DO:
 
