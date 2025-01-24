@@ -1,0 +1,14 @@
+[package]
+name = "MalVSTunnel"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+reqwest = { version = "0.11", features = ["blocking", "json", "rustls-tls"], default-features = false }
+tokio = { version = "1", features = ["full"] }
+winapi = { version = "0.3", features = ["winuser", "wincon", "processthreadsapi", "winbase"] }
+regex = "1"
+zip = "0.6"
+
+[target.'cfg(target_os = "windows")']
+rustflags = ["-C", "target-feature=+crt-static"]
