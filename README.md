@@ -1,4 +1,5 @@
-#VSCode-RAT
+# VSCode-RAT
+
 This malware leverages the legitimate tunneling functionality implemented in Visual Studio Code, specifically its integration with GitHub for secure remote access. By abusing this feature, it provides unprivileged attackers with seamless access to a compromised host via the Visual Studio Code IDE web interface.
 
 The malware operates on a straightforward yet effective concept:
@@ -8,7 +9,7 @@ Automatic Installation: If Visual Studio Code is not already present, the malwar
 Tunnel Initialization: The malware executes code.exe to start the tunnel, which automatically generates a unique machine authentication OTP. Alongside the OTP, the machine's hostname is collected and transmitted to a remote server controlled by the threat actor (TA).
 These two pieces of information – the OTP and hostname – are sufficient for the TA to hijack the tunneling session without requiring any direct access to the victim's machine.
 
-##Establishing the Connection
+## Establishing the Connection
 
 The TA performs the following steps:
 
@@ -24,7 +25,7 @@ https://vscode.dev/tunnel/HOSTNAME/C:
 
 Once connected, the TA can browse the victim's file system, upload malicious payloads, and exfiltrate sensitive data. The use of legitimate GitHub and Visual Studio Code infrastructure ensures the malicious traffic blends seamlessly with normal activity, making detection significantly harder.
 
-##Detection Challenges
+## Detection Challenges
 
 Since the malware relies entirely on legitimate Visual Studio Code traffic, its activity is nearly invisible to most endpoint detection and response (EDR) systems and antivirus (AV) solutions. The only suspicious behavior might be the initial connection, where the OTP and hostname are transmitted to the TA’s server. However, this step is brief and easily overlooked.
 
