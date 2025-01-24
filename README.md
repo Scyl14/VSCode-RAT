@@ -14,13 +14,9 @@ These two information are all the TA needs to initiate the tunnel.
 
 Uses the OTP to log in to:
 
-&nbnps;
-
 https://github.com/login/device
 
 And then connects to te actual tunnel visiting:
-
-&nbnps;
 
 https://vscode.dev/tunnel/HOSTNAME/C:
 
@@ -29,4 +25,5 @@ After that the TA can freely navigate the file system uploading and downloading 
 At the moment, since the malware use only legitimate traffic to VS code (just the first connetion to send the OTP and the hostname can be suspicious) is not detected by main EDR and AV tecnologies.
 
 TO DO:
+
 1. Add persistence
